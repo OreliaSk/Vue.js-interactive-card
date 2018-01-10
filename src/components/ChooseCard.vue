@@ -12,15 +12,14 @@
 				</div>
 			</div>
 			<div v-if="second.choosen" class="selection">
-				coucou tout le monde !
+				<app-customCard></app-customCard>
 			</div>
 		</div>
-		<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
 	</div>
 </template>
 
 <script>
-
+import CustomCard from './CustomCard'
 export default {
 	data() {
 		return {
@@ -33,8 +32,8 @@ export default {
 					require('../assets/choose-card/orange.svg'),
 					require('../assets/choose-card/blue.svg'),
 					require('../assets/choose-card/red.svg'),
-					require('../assets/choose-card/orange-blue.svg'),
 					require('../assets/choose-card/green.svg'),
+					require('../assets/choose-card/orange-blue.svg'),
 				],
 				bubble: require('../assets/choose-card/speech-bubble.svg'),
 				choosen: false,
@@ -45,13 +44,15 @@ export default {
 		changeImage:function() {
 			this.second.choosen = true;
 		}
+	},
+	components: {
+		'app-customCard': CustomCard
 	}
 }
 </script>
 
 <style>
 	.wrapper {
-		height: 90vh;
 		width: 100%;
 		background: #c9ddff;
 		display: flex;
@@ -90,5 +91,6 @@ export default {
 .card img:hover {
 	animation: animation-card linear 1s infinite;
 }
+
 </style>
 
