@@ -2,12 +2,14 @@
 	<div>
 		<div class="wrapper">
 			<div class="info">
-				<p><img v-bind:src="first.imgDog" alt="dogInfoBubble"></p>
+				<p>
+					<img v-bind:src="first.imgDog" alt="dogInfoBubble">
+				</p>
 			</div>
 			<div class="cards">
-				<p class="card">
-					<img v-for="card in second.cards" :src="card">
-				</p>
+				<div class="card">
+					<img v-for="card in second.cards" :src="card" v-on:mouseover="active=!active">
+				</div>
 			</div>
 		</div>
 		<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
@@ -24,14 +26,15 @@ export default {
 			},
 			second: {
 				cards: [
-					require ('../assets/choose-card/beige.svg'),
-					require ('../assets/choose-card/orange.svg'),
-					require ('../assets/choose-card/blue.svg'),
-					require ('../assets/choose-card/red.svg'),
+					require('../assets/choose-card/beige.svg'),
+					require('../assets/choose-card/orange.svg'),
+					require('../assets/choose-card/blue.svg'),
+					require('../assets/choose-card/red.svg'),
 					require('../assets/choose-card/orange-blue.svg'),
 					require('../assets/choose-card/green.svg'),
 				]
-			}
+			},
+			active:false,
 		}
 	}
 }
@@ -43,11 +46,12 @@ export default {
 		width: 100%;
 		background: #ccc;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: space-around;
 	}
-	.infor {
+	.info {
 		border: 2px solid #000;
+		align-self: flex-end;
 	}
 	.info img{
 		height: 230px;
@@ -56,7 +60,7 @@ export default {
 	.cards {
 		border: 2px solid red;
 		justify-content: center;
-		align-items: center;
+		align-self: center;
 	}
 	.card img{
 		width: 100px;
@@ -64,6 +68,7 @@ export default {
 		margin: 10px;
 		padding: 10px;
 		cursor: pointer;
+		border: 2px solid black;
 	}
 
 @keyframes animation-card {
@@ -80,5 +85,4 @@ export default {
 	animation: animation-card linear 1s infinite;
 }
 </style>
-
 
