@@ -21,23 +21,17 @@ $ npm run dev
 if there is an issue with ```npm run dev```, try this command : 
 ```
 $ npm install webpack-dev-server@2.9.7 --save-dev
+$ npm run dev
 ```
 
 When your files and folders are created, you can replace what is inside and src/App.vue by what is on this github. Then, you will have to install all dependencies below.
 
-For vue-router :
-```
-$ npm install vue-router
-or
-$ yarn add vue-router
-```
 
 ### What I used to build this app :
 * [Vue.js version 2.x](https://vuejs.org/) - Web framework used
 * [vue-cli](https://github.com/vuejs/vue-cli) - Dependency Management
-* [vue-router](https://router.vuejs.org/en/installation.html) - Dependency Managment
 
 ### Author
-* **Orélia Sokambi** - *Initial work*
-* **Adèle Parison** - *Intial work*
+* **Orélia Sokambi - Developper front-end** - *Initial work*
+* **Adèle Parison - Developper front-end** - *Intial work*
 
