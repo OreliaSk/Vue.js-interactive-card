@@ -6,14 +6,20 @@
 					<img v-bind:src="first.imgDog" alt="dogInfoBubble" />
 				</p>
 			</div>
+
+
 			<div v-if="!second.choosen" class="cards">
 				<div class="card">
 					<img v-for="card in second.cards" :src="card" v-on:click="changeImage" />
 				</div>
 			</div>
+
+
 			<div v-if="second.choosen" class="selection">
 				<app-customCard></app-customCard>
 			</div>
+
+
 		</div>
 	</div>
 </template>
@@ -35,7 +41,6 @@ export default {
 					require('../assets/choose-card/green.svg'),
 					require('../assets/choose-card/orange-blue.svg'),
 				],
-				bubble: require('../assets/choose-card/speech-bubble.svg'),
 				choosen: false,
 			},
 		}
