@@ -17,14 +17,16 @@ export default {
 
 
 <style scoped>
-nav {
-	background: crimson;
-	margin: 0;
-	text-align: center;
-}
-h2 {
-	padding: 20px;
-	margin: 0;
-	color: #fff;
-}
+	nav {
+		background-color: #1758c1;
+		margin: 0;
+		text-align: center;
+	}
+	h2 {
+		color: #fff;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 2px;
+		margin: 0;
+		padding: 20px;	
+	}
 </style>
