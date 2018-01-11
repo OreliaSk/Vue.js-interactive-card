@@ -1,9 +1,11 @@
 <template>
 	<div class="bloc-preview">
 		<div v-bind:class="preview.theme" class="preview">
-			<p>{{ preview.title }}</p>
-			<p class="message">{{ preview.content }}</p>
-			<p class="theme">{{ preview.theme }}</p>
+			<div class="preview--opacity">
+				<p class="title">{{ preview.title }}</p>
+				<p class="message">{{ preview.content }}</p>
+				<p class="sender">{{ preview.sender }}</p>
+			</div>
 		</div>
 		<form class="customization">
 			<div class="theme-checkboxes">
@@ -14,21 +16,7 @@
 			</div>
 			<div class="text">
 				<input v-model="preview.title" type="text" placeholder="Entrez le titre de votre carte">
-				<div class="icons">
-					<i class="fa fa-font" aria-hidden="true"></i>
-					<i class="fa fa-align-justify" aria-hidden="true"></i>
-					<i class="fa fa-align-center" aria-hidden="true"></i>
-					<i class="fa fa-align-right" aria-hidden="true"></i>
-					<i class="fa fa-align-left" aria-hidden="true"></i>
-				</div>
 				<textarea v-model="preview.content" cols="35" rows="5" placeholder="Veuillez entrer votre message personnalisé"></textarea>
-				<div class="icons">
-					<i class="fa fa-font" aria-hidden="true"></i>
-					<i class="fa fa-align-justify" aria-hidden="true"></i>
-					<i class="fa fa-align-center" aria-hidden="true"></i>
-					<i class="fa fa-align-right" aria-hidden="true"></i>
-					<i class="fa fa-align-left" aria-hidden="true"></i>
-				</div>
 			</div>
 			<div class="names">
 				<input v-model="preview.sender" type="text" placeholder="Expéditeur de la carte" />
@@ -44,6 +32,7 @@
 				<input type="checkbox">
 				<label>Width</label>
 			</div>
+			<button class="btn-send">Visualiser la carte avant envoi</button>
 		</form>
 	</div>
 </template>
@@ -64,6 +53,15 @@
 </script>
 
 <style>
+.title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.6rem;
+}
+.sender {
+	text-align: right;
+	font-weight: bold;
+}
 * {
 	font-family: 'Lato', sans-serif;
 }
@@ -145,6 +143,13 @@ h3 {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+.preview--opacity {
+	background-color: rgba(255, 255, 255, .7);
+	margin: 20px 30px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #000;
+	padding: 10px;
 }
 
 </style>
