@@ -1,9 +1,9 @@
 <template>
 	<div class="bloc-preview">
-		<div class="preview">
+		<div v-bind:class="preview.theme" class="preview">
 			<p>{{ preview.title }}</p>
 			<p class="message">{{ preview.content }}</p>
-			<p class="sender">{{ preview.sender }}</p>
+			<p class="theme">{{ preview.theme }}</p>
 		</div>
 		<form class="customization">
 			<div class="theme-checkboxes">
@@ -56,12 +56,10 @@
 					title: '',
 					content: '',
 					theme: '',
-					sender: '',
 				},
-				themes: ['Noël', 'Nouvel an', 'Anniversaire', 'Mariage', 'Naissance', 'Amitié'],
-
+				themes: ['Noël', 'Nouvel an', 'Anniversaire', 'Mariage', 'Naissance', 'St Valentin'],
 			}
-		}
+		},
 	}
 </script>
 
@@ -78,6 +76,7 @@
 	background-color: #fff;
 	margin: 20px;
 	width: 25vw;
+	border-radius: 5px;
 }
 .customization {
 	margin: 20px;
@@ -97,11 +96,55 @@
 }
 .customization textarea {
 	margin: 5px;
+	padding: 10px;
 }
 h3 {
 	padding: 0;
 	margin: 0;
 	font-size: 1rem;
+}
+
+.Noël {
+	background: url(../assets/custom-card/wall_noel.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.Anniversaire {
+	background: url(../assets/custom-card/wall_birthday.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.Naissance {
+	background: url(../assets/custom-card/wall_nais.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.Valentin {
+	background: url(../assets/custom-card/wall_valentin.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.an {
+	background: url(../assets/custom-card/wall_newyear.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.Mariage {
+	background: url(../assets/custom-card/wall_mari.png) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 </style>
