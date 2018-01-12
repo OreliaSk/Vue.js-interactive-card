@@ -34,7 +34,9 @@
 					<option v-for="font in fonts">{{font}}</option>
 				</select>
 			</div>
-			<div class="bloc-bouton"><button class="btn-send">Visualiser la carte avant envoi</button></div>
+			<div class="bloc-bouton">
+				<button class="btn-send">Visualiser la carte avant envoi</button>
+			</div>
 		</form>
 
 	</div>
@@ -124,8 +126,8 @@
 		margin: 5px;
 		padding: 10px;
 	}
-	.theme-select h3 {
-		padding: 0;
+	h3 {
+		padding: 0 0 0 7px;
 		margin: 0;
 		font-size: 1rem;
 	}
