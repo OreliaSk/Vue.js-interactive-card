@@ -35,3 +35,6 @@ When your files and folders are created, you can replace what is inside and src/
 * **Orélia Sokambi - Developper front-end** - *Initial work*
 * **Adèle Parison - Developper front-end** - *Intial work*
 
+### Good to know
+You can see screenshots of the final render [here](https://github.com/OreliaSk/Vue.js-interactive-card/tree/master/src/assets/final-render)
+
