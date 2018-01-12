@@ -2,16 +2,16 @@
 	<div class="wrapper-custom-card">
 		<div v-bind:class="preview.theme" class="preview">
 			<div class="preview--opacity">
-				<p class="title">{{ preview.title }}</p>
-				<p class="message">{{ preview.content }}</p>
-				<p class="sender">{{ preview.sender }}</p>
+				<p v-bind:class="font" class="title">{{ preview.title}}</p>
+				<p v-bind:class="font" class="message">{{ preview.content }}</p>
+				<p v-bind:class="font" class="sender">{{ preview.sender }}</p>
 			</div>
 		</div>
 
 		<form class="customization">
 			<div class="theme-select">
 				<h3>Choisissez un thème :</h3>
-				<select v-model="preview.theme">
+				<select v-model="preview.theme" selected>
 					<option v-for="theme in themes">{{ theme }}</option>
 				</select>
 			</div>
@@ -22,16 +22,17 @@
 			<div class="names">
 				<input v-model="preview.sender" type="text" placeholder="Expéditeur de la carte" />
 			</div>
-			<div class="anim-checkboxes">
+			<div class="anim-select">
 				<h3>Choisissez une animation :</h3>
-				<input type="checkbox">
-				<label>Bounce</label>
-				<input type="checkbox">
-				<label>Shuffle</label>
-				<input type="checkbox">
-				<label>Show</label>
-				<input type="checkbox">
-				<label>Width</label>
+				<select v-model="animation">
+					<option v-for="animation in animations">{{animation}}</option>
+				</select>
+			</div>
+			<div class="fonts">
+				<h3>Choisissez une police :</h3>
+				<select v-model="font">
+					<option v-for="font in fonts">{{font}}</option>
+				</select>
 			</div>
 			<div class="bloc-bouton"><button class="btn-send">Visualiser la carte avant envoi</button></div>
 		</form>
@@ -47,8 +48,12 @@
 					title: '',
 					content: '',
 					theme: '',
+					font:'',
+					animation: '',
 				},
 				themes: ['Noël', 'Nouvel an', 'Anniversaire', 'Mariage', 'Naissance', 'St Valentin'],
+				fonts: ['Pacifico', 'Didact Gothic', 'Playfair Display', 'Handlee'],
+				animations: ['Bounce', 'Shuffle', 'Show', 'Width'],
 			}
 		},
 	}
@@ -97,13 +102,13 @@
 	.customization {
 		margin: 20px;
 	}
-	.theme-select select, .names input, .text input {
+	.theme-select select, .names input, .text input, .fonts select, .anim-select select {
 		min-height: 4vh;
 		padding: 5px;
 		margin: 10px 5px;
 		display: block;
 	}
-	.theme-select select {
+	.theme-select select, .fonts select, .anim-select select {
 		width: 96.5%;
 	}
 	.names input, .text input {
@@ -124,13 +129,42 @@
 		margin: 0;
 		font-size: 1rem;
 	}
+
+	/* style buttons */
+	.btn-font {
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 1rem;
+		margin-right: 5px;
+		transition: all .3s linear;
+	}
+	.btn-font:hover {
+		background-color: rgba(23, 88, 193, .25);
+	}
+	.Pacifico {
+		font-family: 'Pacifico', cursive;
+		padding: 5px;
+	}
+	.Gothic {
+		font-family: 'Didact Gothic', sans-serif;
+		padding: 10.2px;
+	}
+	.Playfair {
+		font-family: 'Playfair Display', serif;
+		padding: 10.2px;
+	}
+	.Handlee {
+		font-family: 'Handlee', cursive;
+		padding: 8px;
+	}
 	.bloc-bouton {
 		margin-top: 15px;
 		text-align: center;
 	}
 	.btn-send {
 		background-color: #1758C1;
-		border: none;
+		border:none;
 		border-radius: 3px;
 		color: #fff;
 		cursor: pointer;
